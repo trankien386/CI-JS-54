@@ -1,0 +1,76 @@
+body {
+	margin: 0;
+}
+
+.main-page {
+	margin: 10px 20%;
+}
+
+.main-page .question {
+	background: #222;
+	color: #fff;
+	padding: 60px;
+	text-align: center;
+	font-size: 28px;
+	border-radius: 8px;
+	margin-bottom: 5px;
+	line-height: 40px;
+	width: 556px;
+}
+
+.main-page .answer {
+	display: flex;
+	flex-direction: row-reverse;
+	/* Or set margin-left: auto for #no */
+	justify-content: space-between;
+}
+
+.main-page .answer a {
+	width: 160px;
+	height: 160px;
+	border-radius: 8px;
+	color: #fff;
+	text-align: center;
+	line-height: 160px;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+.main-page .answer a p {
+	margin: 0;
+}
+
+.main-page .answer #yes {
+	background-color: #1AA260;
+}
+
+.main-page .answer #no {
+	background-color: #DD5044;
+}
+
+/* Hover cursor over #no turn it to #yes */
+.main-page .answer #no:hover {
+	background-color: #1AA260;
+}
+
+.main-page .answer #no:hover p span {
+	display: none;
+}
+
+.main-page .answer #no:hover p::after {
+	content: 'Có';
+}
+
+/* And #yes turn to #no */
+.main-page .answer #no:hover ~ #yes {
+	background-color: #DD5044;
+}
+
+.main-page .answer #no:hover ~ #yes p span {
+	display: none;
+}
+
+.main-page .answer #no:hover ~ #yes p::after {
+	content: 'Không';
+}
+

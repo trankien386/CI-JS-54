@@ -1,0 +1,3 @@
+function sayYes() {
+	alert('🥰');
+}
