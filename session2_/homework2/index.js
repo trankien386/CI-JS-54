@@ -39,7 +39,14 @@ class Student {
   show18fromHanoi() {
     console.log('===========================');
     console.log('Danh sách học sinh có số tuổi là 18 và quê ở Hà Nội:');
-
+    for (let i = 0; i < this.listStudent.length; i++) {
+      if (this.listStudent[i].age === 18 && this.listStudent[i].hometown == 'Hanoi') {
+        console.log(`- ${this.listStudent[i].name}`);
+      }
+    }
+  }
+  findStudentsByName() {
+    
   }
 }
 
