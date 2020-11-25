@@ -1,0 +1,31 @@
+.user-container {
+  text-align: center;
+  position: relative;
+  width: max-content;
+  margin: auto;
+}
+
+.user-container img {
+  min-width: 10vw;
+}
+
+.user-container .previous, .next {
+  position: absolute;
+  top: 40%;
+  font-size: 40px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.user-container .previous {
+  left: 0;
+}
+
+.user-container .next {
+  right: 0;
+}
+
+.user-container .info {
+  margin: 20px 0 0 0;
+}
+
