@@ -1,68 +1,44 @@
-class Student {
-  name;
-  age;
-  hometown;
-  course;
-  listStudent;
-  constructor(name, age, hometown, course) {
-    this.listStudent = [];
-    this.name = name;
-    this.age = age;
-    this.hometown = hometown;
-    this.course = course;
-  }
-  showInfo() {
-    console.log('===========================');
-    console.log('Danh sách học sinh:');
-    for (let i = 0; i < this.listStudent.length; i++) {
-      console.log(`
-        Tên: ${this.listStudent[i].name}.
-        Tuổi: ${this.listStudent[i].age}.
-        Quê quán: ${this.listStudent[i].hometown}.
-        Lớp: ${this.listStudent[i].course}.
-      `)
-    }
-  }
-  addStudent(student) {
-    this.listStudent.push(student);
-  }
-  show15yearsOld() {
-    // console.log(this.listStudent);
-    console.log('===========================');
-    console.log('Danh sách học sinh có số tuổi là 15:');
-    for (let i = 0; i < this.listStudent.length; i++) {
-      if (this.listStudent[i].age === 15) {
-        console.log(`- ${this.listStudent[i].name}`);
-      }
-    }
-  }
-  show18fromHanoi() {
-    console.log('===========================');
-    console.log('Danh sách học sinh có số tuổi là 18 và quê ở Hà Nội:');
-    for (let i = 0; i < this.listStudent.length; i++) {
-      if (this.listStudent[i].age === 18 && this.listStudent[i].hometown == 'Hanoi') {
-        console.log(`- ${this.listStudent[i].name}`);
-      }
-    }
-  }
-  findStudentsByName() {
-    
-  }
-}
+import { Student } from './student.js'
+import { StudentCollection } from './studentCollection.js'
+import './card.js'
 
-const student1 = new Student('Kien', 18, 'Hanoi', '12D1');
-const student2 = new Student('Leq', 15, 'Astofia', '9A');
-const student3 = new Student('Enki', 15, 'Goxul', '9A');
-const student4 = new Student('Mewlos', 18, 'Hanoi', '10D1');
+const studentCollection = new StudentCollection();
 
-const studentInfo = new Student();
-studentInfo.addStudent(student1);
-studentInfo.addStudent(student2);
-studentInfo.addStudent(student3);
-studentInfo.addStudent(student4);
+// studentCollection.addStudent(new Student('Kien', 18, 'Hanoi', '12D1'));
+// studentCollection.addStudent(new Student('Leq', 15, 'Astofia', '9A'));
+// studentCollection.addStudent(new Student('Enki', 15, 'Goxul', '9A'));
+// studentCollection.addStudent(new Student('Mewlos', 18, 'Hanoi', '10D1'));
 
-studentInfo.showInfo();
-studentInfo.show15yearsOld();
-studentInfo.show18fromHanoi();
+// const studentInfo = new Student();
+
+const student1 = new Student('Kien', 17, 'Hanoi', '12D1');
+const student2 = new Student('Leq', 14, 'Astofia', '9A');
+const student3 = new Student('Enki', 14, 'Goxul', '9A');
+const student4 = new Student('Mewlos', 15, 'Hanoi', '10D1');
+
+studentCollection.addStudent(student1);
+studentCollection.addStudent(student2);
+studentCollection.addStudent(student3);
+studentCollection.addStudent(student4);
+
+// studentInfo.addStudent(student1);
+// studentInfo.addStudent(student2);
+// studentInfo.addStudent(student3);
+// studentInfo.addStudent(student4);
+
+// studentCollection.addStudent(student1);
+//
+// studentInfo.showInfo();
+// studentInfo.show15yearsOld();
+// studentInfo.show18fromHanoi()
+
+// console.log(studentCollection);
+
+document.querySelector('.row').innerHTML = `
+  <card-component class="col-md-3" name='${student1.name}' age='${student1.age}' hometown='${student1.hometown}' course='${student1.course}' img='https://img-new.cgtrader.com/items/1838623/f1191aa4b5/toy-rubber-duck-3d-model-obj-mtl-fbx-lwo-lw-lws-stl-dae-lxo-lxl.jpg'></card-component>
+  <card-component class="col-md-3" name='${student2.name}' age='${student2.age}' hometown='${student2.hometown}' course='${student2.course}' img='https://cdn11.bigcommerce.com/s-y01u13u/images/stencil/1280x1280/products/898/80237/apihm4lz3__91572.1594403284.jpg?c=2'></card-component>
+  <card-component class="col-md-3" name='${student3.name}' age='${student3.age}' hometown='${student3.hometown}' course='${student3.course}' img='https://img-new.cgtrader.com/items/1838623/f1191aa4b5/toy-rubber-duck-3d-model-obj-mtl-fbx-lwo-lw-lws-stl-dae-lxo-lxl.jpg'></card-component>
+  <card-component class="col-md-3" name='${student4.name}' age='${student4.age}' hometown='${student4.hometown}' course='${student4.course}' img='https://img-new.cgtrader.com/items/1838623/f1191aa4b5/toy-rubber-duck-3d-model-obj-mtl-fbx-lwo-lw-lws-stl-dae-lxo-lxl.jpg'></card-component>
+`
 
 
