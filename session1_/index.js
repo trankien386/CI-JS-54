@@ -120,4 +120,4 @@ console.log(findOddNumber(array4));
 // 	return str.length;
 // }
 
-
+console.log(forn(gen));

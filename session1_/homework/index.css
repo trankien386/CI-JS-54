@@ -15,7 +15,7 @@ body {
 	border-radius: 8px;
 	margin-bottom: 5px;
 	line-height: 40px;
-	width: 556px;
+	width: 80%;
 }
 
 .main-page .answer {
@@ -23,6 +23,7 @@ body {
 	flex-direction: row-reverse;
 	/* Or set margin-left: auto for #no */
 	justify-content: space-between;
+	width: 80%;
 }
 
 .main-page .answer a {

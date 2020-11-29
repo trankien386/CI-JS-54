@@ -1,7 +1,7 @@
 class person {
-	name;
-	age;
-	address;
+  name;
+  age;
+  address;
   gender;
   // đc gọi khi khai báo 1 đối tượng mới
   constructor(name, age, address, gender) {
@@ -23,11 +23,11 @@ class person {
   }
 }
 
-const god = new person('God', 9, 'Everywhere', 'Male');
+const god = new person("God", 9, "Everywhere", "Male");
 // const fish = new person('Fish', 12, 'Pacific ocean', 'Female');
 // god.speak();
 
-const me = new person('Kien', 19, 'Hanoi', 'Male');
+const me = new person("Kien", 19, "Hanoi", "Male");
 // me.introduce();
 
 /* Class Animal
@@ -63,14 +63,17 @@ class Animal {
     //   console.log('Động vật không nguy hiểm');
     // }
     // cach 2
-    const message = (this.numberOfLeg > 4 || this.numberOfLeg === 0) ? 'Nguy HIem day' : 'Khong nguy hiem';
+    const message =
+      this.numberOfLeg > 4 || this.numberOfLeg === 0
+        ? "Nguy HIem day"
+        : "Khong nguy hiem";
     console.log(message);
   }
 }
 
-const Lion = new Animal('Asiatic Lion', 'Panthera leo', 'yellow', 4, 'Male');
+const Lion = new Animal("Asiatic Lion", "Panthera leo", "yellow", 4, "Male");
 // console.log(Lion);
-// Lion.isDangerous();
+Lion.isDangerous();
 
 class myMath {
   static sum(a, b) {
@@ -81,7 +84,7 @@ class myMath {
   }
 }
 
-// console.log(myMath.sum(2, 3));
+console.log(myMath.sum(2, 3));
 // console.log(Math.ceil(2.435));
 
 // kế thừa
@@ -92,14 +95,14 @@ class Employee extends person {
     this.salary = salary;
   }
   meme() {
-    console.log('Make America great again');
+    console.log("Make America great again");
   }
   showOff() {
-    return 'My salary is ' + this.salary;
+    return "My salary is " + this.salary;
   }
 }
 
-const myEmployee = new Employee('Angel', 8, 'Everywhere', 'Male', '1$');
+const myEmployee = new Employee("Angel", 8, "Everywhere", "Male", "1$");
 // myEmployee.meme();
 // nếu thêm console.log thì showOff() nên dùng return thay vì console.log
 // console.log(myEmployee.showOff());
@@ -115,5 +118,7 @@ class dog extends Animal {
   }
 }
 
-const myDog = new dog('Bull', 'Dog', 'Red Brindle', 4, 'Male');
-// myDog.speak();
+const myDog = new dog("Bull", "Dog", "Red Brindle", 4, "Male");
+myDog.speak();
+
+
