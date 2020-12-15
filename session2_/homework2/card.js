@@ -20,6 +20,28 @@ export class cardComponent extends HTMLElement {
       </div>
     `;
   }
+
+  // duoc goi khi component duoc show ra man hinh
+  // connectedCallback() {
+  //   console.log('element ' + this.name + ' dc sinh ra');
+  // }
+
+  // duoc goi khi component bi xoa di
+  // disconnectedCallback() {
+  //   console.log('element ' + this.name + ' bi xoa di');
+  // }
+
+  // Lang nghe thay doi nhữq attribute nao
+  // static get observeredAttribute() {
+  //   return ['name'];
+  // }
+
+  // duoc goi khi co su thay doi attribute
+  // attributeChangedCallback(name, oldValue, newVal) {
+  //   console.log('newVal', newVal);
+  //   console.log('oldVal', oldValue);
+  //   console.log('attribute', name);
+  // }
 }
 
 customElements.define("card-component", cardComponent);
@@ -51,3 +73,5 @@ const style = `
     }
   </style>
 `;
+
+
