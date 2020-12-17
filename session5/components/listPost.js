@@ -1,4 +1,4 @@
-import { getDataFromDocs } from "../components/utils.js";
+import { getDataFromDocs, getDataFromDoc } from "../components/utils.js";
 
 class listPost extends HTMLElement {
   constructor() {
@@ -35,6 +35,7 @@ class listPost extends HTMLElement {
     `;
   }
 
+  // Tinh nang snapshot cua firebase
   listenCollectionChange() {
     let firstRun = true;
     firebase
@@ -48,7 +49,26 @@ class listPost extends HTMLElement {
           return;
         }
         console.log("snapshot ", snapShot.docChanges());
+
+        // Theo dõi những bài mới được tạo
+        const docChange = snapShot.docChanges();
+        for (const oneChange of docChange) {
+          if (oneChange.type === "added") {
+            this.appendPostItem(getDataFromDoc(oneChange.doc));
+          }
+        }
       });
+  }
+
+  // Những bài mới tạo sẽ được xếp lên trên đầu
+  appendPostItem(data) {
+    const postItem = document.createElement("post-item");
+    postItem.setAttribute("time", data.createdAt);
+    postItem.setAttribute("author", data.authorName);
+    postItem.setAttribute("content", data.content);
+
+    const parent = this.sdRoot.querySelector(".list-posts");
+    parent.insertBefore(postItem, parent.firstChild);
   }
 }
 
